@@ -1,10 +1,10 @@
 import { CatsService } from '../../../domain/cats/services/cats.service';
 import { CatAggregate } from '../../../domain/cats/aggregate/cat.aggregate';
 import { Injectable } from '@nestjs/common';
-import { UseCase } from '../../../common/use-case/usecase.abstract';
+import { AbstractUseCase } from '../../../common/use-case/usecase.abstract';
 
 @Injectable()
-export class CreateCatUseCase extends UseCase {
+export class CreateCatUseCase extends AbstractUseCase {
   constructor(private readonly catService: CatsService) {
     super();
   }

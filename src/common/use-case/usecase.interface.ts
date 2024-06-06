@@ -1,7 +1,7 @@
-export interface IExecuteContext {
+export interface ExecuteContext {
   currentUser?: { id: string; email: string };
 }
 
-export interface IUseCase {
-  execute(params?: any, context?: IExecuteContext): unknown;
+export interface UseCase {
+  execute(params?: any, context?: ExecuteContext): unknown;
 }
