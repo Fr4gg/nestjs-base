@@ -6,7 +6,7 @@ export class CatModel {
   id: string;
 
   @Field()
-  name: string;
+  name?: string;
 
   @Field()
   age: number;

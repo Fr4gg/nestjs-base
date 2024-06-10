@@ -1,4 +1,4 @@
-import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
+import { Args, Mutation, Query, ResolveField, Resolver } from '@nestjs/graphql';
 import { CatModel } from '../object-types/cats/cat.model';
 import { CreateCatUseCase } from '../../../application/cats/use-cases/createCat.usecase';
 import { CreateCatInput } from '../input-types/cats/createCat.input';
@@ -9,7 +9,11 @@ export class CatsResolver {
 
   @Query(() => [CatModel])
   cat() {
-    return [{ id: '1', name: 'Cat 1', age: 1, breed: 'Breed 1' }];
+    return [{ id: '1', age: 1, breed: 'Breed 1' }];
+  }
+  @ResolveField('name')
+  name(): string {
+    return 'Resolved name';
   }
 
   @Mutation(() => CatModel)

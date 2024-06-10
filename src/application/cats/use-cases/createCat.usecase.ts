@@ -14,7 +14,6 @@ export class CreateCatUseCase extends AbstractUseCase {
     age: number;
     breed: string;
   }): Promise<CatAggregate> {
-    this.logger.log('Creating a cat');
     return this.catService.create(input);
   }
 }
